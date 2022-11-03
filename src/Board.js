@@ -80,22 +80,38 @@
     // test if a specific row on this board contains a conflict
     hasRowConflictAt: function(rowIndex) {
       // declare a variable and assign to the row
+      var thisRow = this.get(rowIndex);
       // declare another variable and set equal to result of reduce row
+      var sum = thisRow.reduce(function(accumulator, space) {
+        return accumulator + space;
+      }, 0);
       // if sum is greater than 1
+      if (sum > 1) {
         // return true
+        return true;
+      }
       // return false
       return false;
     },
 
     // test if any rows on this board contain conflicts
     hasAnyRowConflicts: function() {
+      // DIDN'T GET IT TO WORK
+
       // decalare a variable set equal to false
+      var rowConflict = false;
       // for loop to access each row
+      for (var i = 0; i < this.rows(length) - 1; i++) {
         // update variable to hasRowConflictAt, pass in row value
+        console.log('Row Conflict: ', hasRowConflictAt(i))
+        rowConflict = hasRowConflictAt(i);
         // if variable is true
-          // break from for loop
+        if (rowConflict === true) {
+          return rowConflict;
+        }
+      }
       // return variable
-      return false; // fixme
+      return rowConflict; // fixme
     },
 
 
@@ -133,16 +149,23 @@
     // add to row, add to column
     hasMajorDiagonalConflictAt: function(majorDiagonalColumnIndexAtFirstRow) {
       // declare variable columnIndex equals parameter
+      var columnIndex = majorDiagonalColumnIndexAtFirstRow;
       // sum variable equal to 0
+      var sum = 0;
 
       // iterate through array of arrays
+      this.rows().forEach(function(row) {
         // check if column index is negative
+        if (columnIndex < 0) {
           // continue
-        // else
+        } else {
           // add thisrow[columnIndex] to sum
-        // increment columnIndex
-      // return sum > 1 ? true : false;
-      return false; // fixme
+          sum += row[columnIndex];
+          // increment columnIndex
+          columnIndex++;
+        }
+      });
+      return sum > 1 ? true : false;
 
       // USE FOR REFACTORING
       // if variable is negative
@@ -152,15 +175,12 @@
     // test if any major diagonals on this board contain conflicts
     hasAnyMajorDiagonalConflicts: function() {
       // get length of size
+      // var size = this.rows.length;
+      // for (var index = size + 1; index  < Math.abs(size) - 1; index++) {
+      //   console.log(index);
+      // }
       return false;
     },
-    var size = -5;
-
-    for (var index = size - 1; index  < Math.abs(size) - 1; index++) {
-        console.log(index);
-    }
-
-
 
     // Minor Diagonals - go from top-right to bottom-left
     // --------------------------------------------------------------
@@ -169,6 +189,7 @@
 
     // start from max, subtract row, subtract column
     hasMinorDiagonalConflictAt: function(minorDiagonalColumnIndexAtFirstRow) {
+      //
       return false; // fixme
     },
 

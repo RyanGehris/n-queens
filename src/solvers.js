@@ -18,6 +18,15 @@
 window.findNRooksSolution = function(n) {
   var solution = undefined; //fixme
 
+  // recursive that will return solution
+  // once you have one solution, solution is not undefined so return it
+
+  // var newBoard = new Board();
+
+  // this.attributes
+
+  // newBoard.findNRooksSolution(n)
+
   console.log('Single solution for ' + n + ' rooks:', JSON.stringify(solution));
   return solution;
 };
@@ -26,9 +35,15 @@ window.findNRooksSolution = function(n) {
 window.countNRooksSolutions = function(n) {
   var solutionCount = undefined; //fixme
 
+  // recursive that stores all solutions in an array
+
+  // findNRooksSolution()
+
   console.log('Number of solutions for ' + n + ' rooks:', solutionCount);
   return solutionCount;
 };
+
+
 
 // return a matrix (an array of arrays) representing a single nxn chessboard, with n queens placed such that none of them can attack each other
 window.findNQueensSolution = function(n) {
