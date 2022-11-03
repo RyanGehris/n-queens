@@ -86,7 +86,7 @@
         return accumulator + space;
       }, 0);
       // if sum is greater than 1
-      if (sum > 1) {
+      if (sum >= 1) {
         // return true
         return true;
       }
@@ -152,19 +152,23 @@
       var columnIndex = majorDiagonalColumnIndexAtFirstRow;
       // sum variable equal to 0
       var sum = 0;
-
+      var matrix = this.rows();
       // iterate through array of arrays
-      this.rows().forEach(function(row) {
+      // this.rows().forEach(function(row) {
+      for (var index = 0; index < matrix.length; index++) {
+        var row = matrix[index];
         // check if column index is negative
         if (columnIndex < 0) {
           // continue
+          continue;
         } else {
           // add thisrow[columnIndex] to sum
           sum += row[columnIndex];
           // increment columnIndex
           columnIndex++;
         }
-      });
+      }
+
       return sum > 1 ? true : false;
 
       // USE FOR REFACTORING
@@ -189,12 +193,34 @@
 
     // start from max, subtract row, subtract column
     hasMinorDiagonalConflictAt: function(minorDiagonalColumnIndexAtFirstRow) {
-      //
+      // declare variable columnIndex equals parameter
+      // var columnIndex = minorDiagonalColumnIndexAtFirstRow;
+      // // sum variable equal to 0
+      // var sum = 0;
+      // var matrix = this.rows();
+      // // iterate through array of arrays
+      // //this.rows().forEach(function(row) {
+      // for (var index = 0; index < matrix.length; index++) {
+      //   var row = matrix[index];
+      //   // check if column index is negative
+      //   if (columnIndex > n - 1) {
+      //     // continue
+      //     continue;
+      //   } else {
+      //     // add thisrow[columnIndex] to sum
+      //     sum += row[columnIndex];
+      //     // increment columnIndex
+      //     columnIndex--;
+      //   }
+      // };
+      // return sum > 1 ? true : false;
+
       return false; // fixme
     },
 
     // test if any minor diagonals on this board contain conflicts
     hasAnyMinorDiagonalConflicts: function() {
+
       return false; // fixme
     }
 

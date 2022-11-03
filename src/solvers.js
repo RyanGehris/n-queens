@@ -13,28 +13,48 @@
 
 // return a matrix (an array of arrays) representing a single nxn chessboard, with n rooks placed such that none of them can attack each other
 
-
+//
 
 window.findNRooksSolution = function(n) {
-  var solution = undefined; //fixme
+  //var solution = undefined; //fixme
+  // var newBoard = new Board({'n': n});
+  // // outer for loop to get rows
+  // newBoard.rows().forEach(function(row, rowIndex, collection) {
+  //   // inner for loop to get columns
+  //   row.forEach(function(column, columnIndex, collection) {
+  //     // if rook can be placed at rindex cindex
+  //     if (!newBoard.hasColConflictAt(columnIndex) && !newBoard.hasRowConflictAt(rowIndex)) {
+  //       // place rook at indices (toggle)
+  //       newBoard.togglePiece(rowIndex, columnIndex);
+  //     }
+  //   });
+  // });
 
-  // recursive that will return solution
-  // once you have one solution, solution is not undefined so return it
+  var checkBoard = new Board([[0, 1, 1, 0],[0, 0, 0, 0],[0, 0, 0, 0],[0, 0, 0, 0]])
 
-  // var newBoard = new Board();
-
-  // this.attributes
-
-  // newBoard.findNRooksSolution(n)
-
+  console.log(checkBoard.hasRowConflictAt(0));
+  console.log(newBoard);
   console.log('Single solution for ' + n + ' rooks:', JSON.stringify(solution));
-  return solution;
+  return newBoard.attributes;
 };
+
+// var newBoard = new Board();
+// this.attributes
+// newBoard.findNRooksSolution(n)
 
 // return the number of nxn chessboards that exist, with n rooks placed such that none of them can attack each other
 window.countNRooksSolutions = function(n) {
   var solutionCount = undefined; //fixme
 
+  // declare an inner function parameter board
+    // board = board || new Board();
+    // check if solution
+      // if true, update solution
+
+
+  // innerFunc();
+
+  // find solution inner function
   // recursive that stores all solutions in an array
 
   // findNRooksSolution()
