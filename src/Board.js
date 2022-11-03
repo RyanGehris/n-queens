@@ -79,11 +79,22 @@
     //
     // test if a specific row on this board contains a conflict
     hasRowConflictAt: function(rowIndex) {
-      return false; // fixme
+      // declare a variable and assign to the row
+      // declare another variable and set equal to result of reduce row
+      // if sum is greater than 1
+        // return true
+      // return false
+      return false;
     },
 
     // test if any rows on this board contain conflicts
     hasAnyRowConflicts: function() {
+      // decalare a variable set equal to false
+      // for loop to access each row
+        // update variable to hasRowConflictAt, pass in row value
+        // if variable is true
+          // break from for loop
+      // return variable
       return false; // fixme
     },
 
@@ -94,11 +105,21 @@
     //
     // test if a specific column on this board contains a conflict
     hasColConflictAt: function(colIndex) {
-      return false; // fixme
+      var sum = 0;
+      this.rows().forEach(function(indRow) {
+        sum += indRow[colIndex];
+      })
+      return sum > 1 ? true : false;
     },
 
     // test if any columns on this board contain conflicts
     hasAnyColConflicts: function() {
+      // decalare a variable set equal to false
+      // for loop to access each row
+        // update variable to hasRowConflictAt, pass in row value
+        // if variable is true
+          // break from for loop
+      // return variable
       return false; // fixme
     },
 
@@ -108,14 +129,36 @@
     // --------------------------------------------------------------
     //
     // test if a specific major diagonal on this board contains a conflict
+
+    // add to row, add to column
     hasMajorDiagonalConflictAt: function(majorDiagonalColumnIndexAtFirstRow) {
+      // declare variable columnIndex equals parameter
+      // sum variable equal to 0
+
+      // iterate through array of arrays
+        // check if column index is negative
+          // continue
+        // else
+          // add thisrow[columnIndex] to sum
+        // increment columnIndex
+      // return sum > 1 ? true : false;
       return false; // fixme
+
+      // USE FOR REFACTORING
+      // if variable is negative
+        // row[absolute value of variable][0]
     },
 
     // test if any major diagonals on this board contain conflicts
     hasAnyMajorDiagonalConflicts: function() {
-      return false; // fixme
+      // get length of size
+      return false;
     },
+    var size = -5;
+
+    for (var index = size - 1; index  < Math.abs(size) - 1; index++) {
+        console.log(index);
+    }
 
 
 
@@ -123,6 +166,8 @@
     // --------------------------------------------------------------
     //
     // test if a specific minor diagonal on this board contains a conflict
+
+    // start from max, subtract row, subtract column
     hasMinorDiagonalConflictAt: function(minorDiagonalColumnIndexAtFirstRow) {
       return false; // fixme
     },
